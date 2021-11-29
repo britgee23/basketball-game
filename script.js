@@ -14,11 +14,6 @@ var $bigbox = $('.bigbox');
 let p1Name;
 let p2Name;
 
-// http://stackoverflow.com/questions/1038677/how-can-i-measure-the-time-between-click-and-release-in-javascript
-// the begin function starts counting when the mouse is clicked logging its time down in miliseconds
-// the end function then subtracts the start time from the current time giving you the time down held down in miliseconds
-
-
 
 
 var game = {
@@ -31,8 +26,6 @@ var game = {
   shotsTaken: 0,
   difficulty: '',
 
-
-  //move hoop in background
 
 
 randNum: function(){
@@ -65,9 +58,8 @@ start: function(){
         }
       }
     })
-// make difficulty not string .. number
- }, // end start
 
+ }, 
 
 showDirections: function(){
   $bigbox.animate({ height: "48%"}, 500);
@@ -95,7 +87,7 @@ showDirections: function(){
      game.whosTurn = p1Name;
    } else if (game.whosTurn === p1Name) {
      game.whosTurn = p2Name;
-   };
+   }
  },
 
  updateScore: function(){
@@ -107,7 +99,7 @@ showDirections: function(){
        $playerTwoScore.text( p2Name + " Score: " + game.scoreCount);
        game.secondScore = game.scoreCount;
      }
-  };
+  }
  },
 
 
@@ -120,7 +112,7 @@ makeShot: function(){
   $makeormiss.text("SWISH!");
   game.scoreCount++
   console.log(game.scoreCount);
-};
+}
   game.updateScore();
 },
 
@@ -165,7 +157,7 @@ animatePowerMeter: function(){
       default:
         $('#innerbox').animate({ width: "100%", backgroundColor: "#00cc00"}, 1700).animate({
                                backgroundColor: "#b3000"}, 200);
-    };
+    }
 },
 
 animateWinner: function(){
@@ -184,8 +176,8 @@ animateWinner: function(){
           $('img[src="' + newSrc + '"]').attr('src', oldSrc); // stack overflow
           if (game.shotsTaken !== 0 && game.shotsTaken%5 === 0){
             $('img[src="' + oldSrc + '"]').attr('src', newSrc); // stack overflow
-          };
-       }; // end begin function
+          }
+       }
 
        function end(){
 
@@ -209,7 +201,7 @@ animateWinner: function(){
                    } else if (downTime > 2000) {
                      game.missShotLong();
                      game.animateMissLong();
-                   };
+                   }
                    break;
                case 'Pro':
                   if (downTime > 1200 && downTime < 1800){
@@ -221,7 +213,7 @@ animateWinner: function(){
                    } else if (downTime > 1800) {
                      game.missShotLong();
                      game.animateMissLong();
-                   };
+                   }
                    break;
                case 'All-Star':
                   if (downTime > 1400 && downTime < 1600){
@@ -233,13 +225,13 @@ animateWinner: function(){
                    } else if (downTime > 1600) {
                      game.missShotLong();
                      game.animateMissLong();
-                   };
+                   }
                   break;
-          }; //end switch difficulty
-         }; // end end function
+          }
+         }
     $ball.mousedown(begin);
-    $ball.mouseup(end) //see above notes
- }, // end addEventToBall function
+    $ball.mouseup(end) 
+ },
 
  endTurn: function(){
        $timerId.animate({ color: '#ffffff' }, 500);
@@ -270,11 +262,11 @@ animateWinner: function(){
              location.reload();
            });
            return;
-         };
+         }
        } else {
          $($container).append('<button id="next">Next</button>');
          $('#next').on('click', game.startNextRound);
-       };
+       }
 
  }, // end endTurn function
 
@@ -289,7 +281,7 @@ animateWinner: function(){
      game.whosTurn = p1Name;
    } else if (game.whosTurn === p1Name) {
      game.whosTurn = p2Name;
-   };
+   }
    $($ball).on('click', game.startTheTimer);
  },
 
@@ -307,11 +299,11 @@ animateWinner: function(){
          $($timerId).animate({ color: "#b3000", }, 200);
          $($timerId).fadeOut(500);
          $($timerId).fadeIn(500);
-       }; if(seconds === 0) {
+       } if(seconds === 0) {
          clearInterval(mytimer);
          game.endTurn();
-       }; // end if clearInterval
-   }; // end updateTime
+       }
+   }
    game.addEventToBall();
  },
 
@@ -319,7 +311,7 @@ animateWinner: function(){
 
 
 $( function() {
-//  alert("jquery loaded");
+
 
 $('p').hide();
 $($startButton).on('click', game.start);
@@ -327,4 +319,4 @@ $($ball).on('click', game.startTheTimer);
 
 
 
-});// JavaScript Document
+});
