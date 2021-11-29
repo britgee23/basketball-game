@@ -1,37 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Basketball Shootout</title>
-	
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>3 Point Shootout</title>
+    <link rel="stylesheet" href="./css/styles.css" media="screen" title="no title" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css">
+  </head>
+  <body>
 
-<body>
-	<div id="container"></div>
-	
-	<div id="winner">
-		
-		</div>
-		
-	<div id="makeormiss">
-		
-	</div>
-	
-<div class="bigbox">
-	<button id="btn">Start Game</button>
-	<p>How to Play Basketball Shootout<br><br><br>
-		
-	
-	
-	
-	
-	
-	
-	</p>
-	
-	
-	
-	</div>
-		
-</body>
+    <div id="container">
+
+
+      <div id="winner">
+        <!-- displays winner message -->
+      </div>
+
+      <div id="makeormiss">
+        <!-- box that says either made or missed shot  -->
+      </div>
+
+      <div class="bigbox">
+        <button id="btn">Start Game</button>
+        <p>How to Play Three-Point-Shootout<br><br><br>
+          Choose your difficulty setting: Rookie is the easiest and All-Star is the most challenging. <br>
+          Start the Shot Clock by clicking on the basketball.<br>
+          Click and hold the basketball to begin shooting.<br>
+          Release the click when the meter fills up green and says "Shoot!"<br>
+          A message will appear in the upper right corner giving you feedback on your shot.<br>
+          The ball will reappear in a random location along the shooting line.<br>
+          Each made shot is worth 1 point, except the "Money Ball" which is worth 2 points.<br>
+          Score the most amount of points within the time limit to win!
+        </p>
+      </div>
+
+
+      <div id="timer">
+        <!-- this is where the timer will be displayed -->
+      </div>
+
+
+      <div id="turn">
+        <!-- whos turn it is will be displayed here  -->
+      </div>
+
+
+      <div id="first-score">
+        <!-- this is where player 1's score will be shown -->
+      </div>
+
+
+
+      <div id="second-score">
+        <!-- this is where player 2's score will be shown -->
+      </div>
+
+
+      <div id="ball">
+        <!-- this is where the ball will be shown -->
+      </div>
+
+
+      <div id="powermeter">
+        <!-- power meter will go here -->
+      </div>
+
+
+    </div>  <!-- end of container -->
+  </body>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+  <script src="./js/app.js"></script>
 </html>
+
