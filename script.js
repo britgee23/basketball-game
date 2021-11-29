@@ -8,7 +8,6 @@ var $turnBox = $('#turn');
 var $container = $('#container');
 var $powermeter = $('#powermeter');
 var oldSrc = 'http://icons.iconseeker.com/png/fullsize/nx10/basketball.png';
-var newSrc = 'http://www.primetimeshootout.net/images/ball.png';
 var $makeormiss = $('#makeormiss');
 var $bigbox = $('.bigbox');
 let p1Name;
@@ -105,7 +104,7 @@ showDirections: function(){
 
 makeShot: function(){
   if (game.shotsTaken !== 0 && game.shotsTaken%5 === 0){
-  $('img[src="' + oldSrc + '"]').attr('src', newSrc);
+  $('img[src="' + oldSrc + '"]')
   game.scoreCount+=2;
   $makeormiss.text("You're On Fire!");
 } else {
@@ -173,9 +172,9 @@ animateWinner: function(){
           startTime = new Date();
           game.shotsTaken++
           game.animatePowerMeter();
-          $('img[src="' + newSrc + '"]').attr('src', oldSrc); // stack overflow
+        ('src', oldSrc);
           if (game.shotsTaken !== 0 && game.shotsTaken%5 === 0){
-            $('img[src="' + oldSrc + '"]').attr('src', newSrc); // stack overflow
+            $('img[src="' + oldSrc + '"]'); 
           }
        }
 
@@ -190,7 +189,7 @@ animateWinner: function(){
           var now = new Date();
           var downTime = (now -startTime);
           game.randNum();
-          switch (game.difficulty) { // make switch case
+          switch (game.difficulty) { 
                 case 'Rookie':
                   if (downTime > 1000 && downTime < 2000){
                      game.makeShot();
@@ -268,7 +267,7 @@ animateWinner: function(){
          $('#next').on('click', game.startNextRound);
        }
 
- }, // end endTurn function
+ }, 
 
  startNextRound: function(){
    $('#next').hide();
